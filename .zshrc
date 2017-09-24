@@ -27,7 +27,7 @@ zle -N down-line-or-beginning-search
 # bind keys
 bindkey "${terminfo[khome]}" beginning-of-line	# Home
 bindkey "${terminfo[kend]}" end-of-line			# End
-bindkey "${terminfo[kdch1]}" delete-char
+bindkey "${terminfo[kdch1]}" delete-char		# Delete
 bindkey '^[[1;5C' forward-word					# Ctrl + Right
 bindkey '^[[1;5D' backward-word					# Ctrl + Left
 
@@ -40,10 +40,8 @@ setopt NO_NOMATCH
 alias diff='colordiff'
 alias grep='grep --color=auto --ignore-case'
 alias mkdir='mkdir -p -v'
-#alias dmesg='dmesg -HL'
 
 # ls
-#alias ls='ls -hF --color=auto'
 alias ls='ls -h --color=auto'
 
 # safety features

@@ -1,9 +1,3 @@
-;---------------------------------------------
-;         Polybar Configuration              ;
-;                 BSPWM                      ;
-;           github.com/JLErvin               ;
-;---------------------------------------------
-
 [colors]
 
 background=${xrdb:background:#ffffff}

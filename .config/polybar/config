@@ -1,5 +1,8 @@
-[colors]
+;
+; colors
+;
 
+[colors]
 background=${xrdb:background:#ffffff}
 foreground=#eaeaea
 ;black=${xrdb:color0:#ffffff}
@@ -7,10 +10,9 @@ foreground=#eaeaea
 ;white=${xrdb:color4:#ffffff}
 
 
-;--------------------------------------------
-; bars                                      ; 
-; draws simple bar w/ small modules at top  ;
-;--------------------------------------------
+;
+; bars
+;
 
 [bar/base]
 dpi = 192
@@ -26,7 +28,7 @@ background = ${colors.background}
 ;border-bottom-color= ${colors.background}
 ;spacing = 0
 ;padding-left = 0
-;padding-right = 0
+padding-right = 1
 module-margin-left = 0
 module-margin-right = 2
 font-N = <fontconfig pattern>;<vertical offset>
@@ -34,13 +36,14 @@ font-0 = terminus:pixelsize=12
 font-1 = Siji;1
 modules-left = bspwm xwindow
 modules-center = mpd
-modules-right = volume memory date
+modules-right = volume date time
 override-redirect = true
 wm-restack = bspwm
 
-;--------------------------------------------
-; modules                                   ;
-;--------------------------------------------
+
+;
+; modules
+;
 
 [module/bspwm]
 type = internal/bspwm
@@ -62,48 +65,42 @@ label-urgent-padding = 2
 label-empty =
 label-empty-padding = 0
 
-
 [module/xwindow]
-;y-offset = 8 
 type = internal/xwindow
-label = %title:0:120:...%
-label-padding = 0
-;label-foreground = %{colors.white} 
-foreground = ${colors.foreground} 
+
+label = %title%
+label-maxlen = 75
 
 [module/mpd]
 type = internal/mpd
 
 label-song = %artist% - "%title%" from %album%
-label-song-maxlen = 75
+label-song-maxlen = 125
 label-song-ellipsis = true
-
-format-online = <toggle> <label-song>
 
 icon-play = 
 icon-pause = 
 
+format-online = <toggle> <label-song>
+
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume>
 label-volume =  %percentage%%
-label-volume-foreground = ${root.foreground}
-format-muted-foreground = ${colors.foreground}
 label-muted =  MUTE
 
+format-volume = <label-volume>
 
 [module/date]
 type = internal/date
+
 interval = 1.0
-date =
-date-alt = "%A, %B %-e, %Y "
-time = %-l:%M %p
-time-alt = %-l:%M %p
-label = %date%%time%
-format = <label>
-format-padding = 0 
-label-foreground=${colors.foreground}
-label-padding= 1 
+date = " %A, %B %-e"
+
+[module/time]
+type = internal/date
+
+interval = 1.0
+date = " %-l:%M %p"
 
 ; vim:ft=dosini

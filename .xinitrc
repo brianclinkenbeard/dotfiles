@@ -27,8 +27,5 @@ mopidy 2> /dev/null &
 # autolock
 xautolock -time 10 -locker 'physlock -s -m' &
 
-# polybar
-polybar example &
-
 # start bspwm
 exec bspwm

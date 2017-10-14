@@ -5,7 +5,7 @@
 # set background
 feh --randomize --bg-fill "$HOME/pictures/wallpapers/" &
 
-# adjust color temperature and dim screen according to time
+# redshift
 redshift > /dev/null &
 
 # compositor
@@ -26,6 +26,9 @@ mopidy 2> /dev/null &
 
 # autolock
 xautolock -time 10 -locker 'physlock -s -m' &
+
+# safeeyes
+safeeyes &
 
 # start bspwm
 exec bspwm

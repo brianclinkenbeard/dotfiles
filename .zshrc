@@ -1,4 +1,6 @@
-# MODULES AND SETUP
+#
+# modules and setup
+#
 
 # load completion
 autoload -Uz compinit
@@ -34,7 +36,10 @@ bindkey '^[[1;5D' backward-word					# Ctrl + Left
 # let patterns not matching a filename kept unchanged
 setopt NO_NOMATCH
 
-# GENERAL ALIASES
+
+#
+# general aliases
+#
 
 # modified commands
 alias diff='colordiff'
@@ -69,7 +74,10 @@ alias redwm="cd $HOME/documents/pkgs/dwm; make; sudo checkinstall"
 #alias ptime="pkill --signal 10 -x 'spt'"
 #alias ppause="pkill --signal 12 -x 'spt'"
 
-# MISCELLANEOUS
+
+#
+# miscellaneous
+#
 
 # disable start and stop mappings (rtorrent)
 stty stop undef

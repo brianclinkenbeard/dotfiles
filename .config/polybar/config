@@ -37,6 +37,7 @@ font-1 = Siji;1
 modules-left = bspwm xwindow
 modules-center = mpd
 modules-right = volume date time
+tray-position = right
 override-redirect = true
 wm-restack = bspwm
 
@@ -75,7 +76,7 @@ label-maxlen = 75
 type = internal/mpd
 
 label-song = %artist% - "%title%" from %album%
-label-song-maxlen = 125
+label-song-maxlen = 115
 label-song-ellipsis = true
 
 icon-play = 

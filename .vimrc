@@ -33,6 +33,9 @@ set number
 set shiftwidth=4
 set tabstop=4
 
+" set shell type to POSIX
+let g:is_posix = 1
+
 " two space tabs for cs1b assignments
 "autocmd BufNewFile,BufRead ~/Documents/School/cs1b/*.{cpp,h} set tabstop=2 shiftwidth=2 expandtab
 

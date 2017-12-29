@@ -70,7 +70,7 @@ label-empty-padding = 0
 type = internal/xwindow
 
 label =  %title%
-label-maxlen = 75
+label-maxlen = 70
 
 [module/mpd]
 type = internal/mpd

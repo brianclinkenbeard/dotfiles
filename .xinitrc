@@ -18,7 +18,7 @@ urxvtd -q -f -o &
 dtach -n /tmp/rtorrentd rtorrent &
 
 # mopidy
-mopidy 2> /dev/null &
+mopidy -q &
 
 # mpd and mpdas
 #mpd &
@@ -27,8 +27,8 @@ mopidy 2> /dev/null &
 # autolock
 xautolock -time 10 -locker 'physlock -s -m' &
 
-# safeeyes
-safeeyes &
+# ping default gateway to keep powerline adapter working
+ping 192.168.1.254 -q > /dev/null &
 
 # start bspwm
 exec bspwm

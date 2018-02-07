@@ -15,6 +15,7 @@ foreground=#eaeaea
 ;
 
 [bar/base]
+monitor = ${env:MONITOR:HDMI-1}
 dpi = 192
 width = 100%
 height = 25
@@ -93,15 +94,15 @@ label-muted =  MUTE
 format-volume = <label-volume>
 
 [module/date]
-type = internal/date
+type = custom/script
 
 interval = 1.0
-date = " %A, %B %-e"
+exec = date +" %A, %B %-e"
 
 [module/time]
-type = internal/date
+type = custom/script
 
 interval = 1.0
-date = " %-l:%M %p"
+exec = date +" %-l:%M %p"
 
 ; vim:ft=dosini

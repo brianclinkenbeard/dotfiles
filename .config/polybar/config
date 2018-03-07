@@ -33,7 +33,8 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 2
 font-N = <fontconfig pattern>;<vertical offset>
-font-0 = terminus:pixelsize=12
+;font-0 = terminus:pixelsize=12
+font-0 = Source Code Pro:style=Medium:size=4;0
 font-1 = Siji;1
 modules-left = bspwm xwindow
 modules-center = mpd

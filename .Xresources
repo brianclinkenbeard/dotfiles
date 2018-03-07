@@ -1,5 +1,6 @@
 ! set font
-URxvt.font: -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+!URxvt.font: -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+URxvt.font: xft:Inconsolata:pixelsize=13
 
 ! fix font spacing
 !URxvt.letterSpace: -1

@@ -8,8 +8,8 @@ feh --randomize --bg-fill "$HOME/pictures/wallpapers/" &
 # redshift
 redshift > /dev/null &
 
-# compositor
-compton -b &
+# compositor (disable rgb10 to fix broken fonts and broken colors)
+allow_rgb10_configs=false compton -b &
 
 # urxvt daemon
 urxvtd -q -f -o &

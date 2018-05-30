@@ -14,9 +14,6 @@ allow_rgb10_configs=false compton -b &
 # urxvt daemon
 urxvtd -q -f -o &
 
-# rtorrentd
-dtach -n /tmp/rtorrentd rtorrent &
-
 # mopidy
 mopidy -q &
 

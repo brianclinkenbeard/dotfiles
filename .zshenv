@@ -8,9 +8,6 @@ export PAGER='/usr/bin/less'
 # set xdg cache
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# hide texmf folder
-export TEXMFHOME="$HOME/.texmf"
-
 # set default scale for bc
 export BC_ENV_ARGS="$HOME/.bcrc"
 

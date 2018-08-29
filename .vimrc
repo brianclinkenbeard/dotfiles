@@ -5,6 +5,8 @@ call plug#begin()
 Plug 'romainl/Apprentice'
 " gnupg
 Plug 'jamessan/vim-gnupg'
+" vim-go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 

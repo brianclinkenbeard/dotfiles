@@ -60,6 +60,9 @@ alias chgrp='chgrp --preserve-root'
 # error friendly cd
 alias cd..='cd ..'
 
+# debian rename
+alias fd='fdfind'
+
 # for dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
@@ -67,7 +70,7 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias cw="feh --randomize --bg-fill $HOME/pictures/wallpapers/"
 
 # recompile dwm/st/surf
-alias redwm="cd $HOME/documents/pkgs/dwm; make; sudo checkinstall"
+#alias redwm="cd $HOME/documents/pkgs/dwm; make; sudo checkinstall"
 
 # spt pause/unpause and time
 #alias pstart="nohup spt -e $HOME/.bin/ping.sh &>/dev/null &"

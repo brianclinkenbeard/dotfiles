@@ -3,7 +3,7 @@
 [ -f ~/.Xresources ] && xrdb -merge "$HOME/.Xresources"
 
 # set background
-feh --randomize --bg-fill "$HOME/pictures/wallpapers/" &
+feh --randomize --bg-fill "$HOME/pictures/wallpapers" &
 
 # redshift
 redshift > /dev/null &
@@ -19,10 +19,10 @@ mopidy -q &
 
 # mpd and mpdas
 #mpd &
-#[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
+[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
 
-# temporary daemon for rtorrent
-tmux new-session -c "$HOME" -s rtorrent -n rtorrent -d rtorrent &
+# run temporary daemon for rtorrent if media disk is mounted
+[ -d /mnt/media/books ] && tmux new-session -c "$HOME" -s rtorrent -n rtorrent -d rtorrent &
 
 # autolock
 xautolock -time 10 -locker 'physlock -s -m' &

@@ -2,6 +2,9 @@
 
 [ -f ~/.Xresources ] && xrdb -merge "$HOME/.Xresources"
 
+# tell java application wm is nonreparenting
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # set background
 feh --randomize --bg-fill "$HOME/pictures/wallpapers" &
 
@@ -15,11 +18,11 @@ allow_rgb10_configs=false compton -b &
 urxvtd -q -f -o &
 
 # mopidy
-mopidy -q &
+#mopidy -q &
 
 # mpd and mpdas
 #mpd &
-[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
+#[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
 
 # run temporary daemon for rtorrent if media disk is mounted
 [ -d /mnt/media/books ] && tmux new-session -c "$HOME" -s rtorrent -n rtorrent -d rtorrent &
@@ -29,9 +32,6 @@ xautolock -time 10 -locker 'physlock -s -m' &
 
 # ping default gateway to keep powerline adapter working
 ping 192.168.1.254 -q > /dev/null &
-
-# tell java application wm is nonreparenting
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 # start bspwm
 exec bspwm

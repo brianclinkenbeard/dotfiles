@@ -73,9 +73,9 @@ alias cw="feh --randomize --bg-fill $HOME/pictures/wallpapers/"
 #alias redwm="cd $HOME/documents/pkgs/dwm; make; sudo checkinstall"
 
 # spt pause/unpause and time
-#alias pstart="nohup spt -e $HOME/.bin/ping.sh &>/dev/null &"
-#alias ptime="pkill --signal 10 -x 'spt'"
-#alias ppause="pkill --signal 12 -x 'spt'"
+alias pstart="nohup spt -e $HOME/.bin/ping.sh &>/dev/null &"
+alias ptime="pkill --signal 10 -x 'spt'"
+alias ppause="pkill --signal 12 -x 'spt'"
 
 
 #

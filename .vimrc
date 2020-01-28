@@ -3,43 +3,41 @@ call plug#begin()
 
 " apprentice theme
 Plug 'romainl/Apprentice'
+" palenight theme
+Plug 'drewtempelmeyer/palenight.vim'
+" onedark theme
+Plug 'joshdick/onedark.vim'
 " gnupg
 Plug 'jamessan/vim-gnupg'
-" vim-go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" language server
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 
 call plug#end()
 
 set nocompatible
 
-" fix backspace
-"set backspace=indent,eol,start
-
 " let jk change to normal mode
 inoremap jk <ESC>
 
-" allow alt + arrow keys to switch between documents
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
-" do not match case in searches unless capitals are included
+" ignore case unless capitals are included
 set ignorecase
 set smartcase
 
-" add line numbers
+" line numbers
 set number
 
-" shorten tab width
+" tab width of 4
 set shiftwidth=4
 set tabstop=4
 
-" set shell type to POSIX
+" default shell type as POSIX
 let g:is_posix = 1
 
-" two space tabs for cs1b assignments
-"autocmd BufNewFile,BufRead ~/Documents/School/cs1b/*.{cpp,h} set tabstop=2 shiftwidth=2 expandtab
+" true colors
+"if (has("termguicolors"))
+"  set termguicolors
+"endif
 
-" set theme to apprentice
-colors apprentice
+" colorscheme
+colorscheme onedark

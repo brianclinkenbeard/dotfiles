@@ -10,7 +10,8 @@ URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
 
 ! do not scroll with output
-!URxvt*scrollTtyOutput: false
+URxvt.scrollTtyOutput: false
+URxvt.scrollTtyKeypress: true
 
 ! disable perl extensions (include matcher plugin for links)
 URxvt.perl-ext:

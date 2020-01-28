@@ -36,6 +36,7 @@ font-N = <fontconfig pattern>;<vertical offset>
 ;font-0 = terminus:pixelsize=12
 font-0 = Source Code Pro:style=Medium:size=4;0
 font-1 = Siji;1
+;font-1 = Font Awesome;1
 modules-left = bspwm xwindow
 modules-center = mpd
 modules-right = volume date time
@@ -71,7 +72,7 @@ label-empty-padding = 0
 [module/xwindow]
 type = internal/xwindow
 
-label =  %title%
+label = %title%
 label-maxlen = 70
 
 [module/mpd]
@@ -81,16 +82,16 @@ label-song = %artist% - "%title%" from %album%
 label-song-maxlen = 115
 label-song-ellipsis = true
 
-icon-play = 
-icon-pause = 
+;icon-play = 
+;icon-pause = 
 
 format-online = <toggle> <label-song>
 
 [module/volume]
 type = internal/volume
 
-label-volume =  %percentage%%
-label-muted =  MUTE
+label-volume = %percentage%%
+label-muted = MUTE
 
 format-volume = <label-volume>
 
@@ -98,12 +99,12 @@ format-volume = <label-volume>
 type = custom/script
 
 interval = 1.0
-exec = date +" %A, %B %-e"
+exec = date +"%A, %B %-e"
 
 [module/time]
 type = custom/script
 
 interval = 1.0
-exec = date +" %-l:%M %p"
+exec = date +"%-l:%M %p"
 
 ; vim:ft=dosini

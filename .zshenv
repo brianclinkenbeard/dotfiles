@@ -13,3 +13,9 @@ export BC_ENV_ARGS="$HOME/.bcrc"
 
 # get rid of quotes in ls
 export QUOTING_STYLE='literal'
+
+# hide texmf
+export TEXMFHOME="$HOME/.texmf"
+
+# hidden gopath
+export GOPATH="$HOME/.go"

@@ -12,7 +12,7 @@ feh --randomize --bg-fill "$HOME/pictures/wallpapers" &
 redshift > /dev/null &
 
 # compositor (disable rgb10 to fix broken fonts and broken colors)
-allow_rgb10_configs=false compton -b &
+#allow_rgb10_configs=false compton -b &
 
 # urxvt daemon
 urxvtd -q -f -o &
@@ -24,11 +24,18 @@ urxvtd -q -f -o &
 #mpd &
 #[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
 
-# run temporary daemon for rtorrent if media disk is mounted
-[ -d /mnt/media/books ] && tmux new-session -c "$HOME" -s rtorrent -n rtorrent -d rtorrent &
 
 # autolock
 xautolock -time 10 -locker 'physlock -s -m' &
+
+# syncthing
+[ -z $(pgrep -xU $UID syncthing) ]] && syncthing -no-restart &
+
+# run rtorrent if media disk is mounted
+mountpoint -q /mnt/media && rtorrent &
+
+# hydroxide smtp server
+$HOME/.go/bin/hydroxide smtp &
 
 # ping default gateway to keep powerline adapter working
 ping 192.168.1.254 -q > /dev/null &

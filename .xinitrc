@@ -11,19 +11,8 @@ feh --randomize --bg-fill "$HOME/pictures/wallpapers" &
 # redshift
 redshift > /dev/null &
 
-# compositor (disable rgb10 to fix broken fonts and broken colors)
-#allow_rgb10_configs=false compton -b &
-
 # urxvt daemon
 urxvtd -q -f -o &
-
-# mopidy
-#mopidy -q &
-
-# mpd and mpdas
-#mpd &
-#[[ -z $(pgrep -xU $UID mpdas) ]] && mpdas &
-
 
 # autolock
 xautolock -time 10 -locker 'physlock -s -m' &
@@ -33,6 +22,9 @@ xautolock -time 10 -locker 'physlock -s -m' &
 
 # run rtorrent if media disk is mounted
 mountpoint -q /mnt/media && rtorrent &
+
+# daemonize rtorrent-flood
+forever start --uid flood -a --sourceDir "$HOME/documents/projects/flood" "server/bin/start.js"
 
 # hydroxide smtp server
 $HOME/.go/bin/hydroxide smtp &

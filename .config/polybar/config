@@ -38,8 +38,8 @@ font-0 = Source Code Pro:style=Medium:size=4;0
 font-1 = Siji;1
 ;font-1 = Font Awesome;1
 modules-left = bspwm xwindow
-modules-center = mpd
-modules-right = volume date time
+;modules-center = mpris
+modules-right = pulseaudio date time
 tray-position = right
 override-redirect = true
 wm-restack = bspwm
@@ -75,20 +75,32 @@ type = internal/xwindow
 label = %title%
 label-maxlen = 70
 
-[module/mpd]
-type = internal/mpd
+[module/mpris]
+type = custom/script
+exec = ~/.config/polybar/player-mpris-simple.sh
 
-label-song = %artist% - "%title%" from %album%
-label-song-maxlen = 115
-label-song-ellipsis = true
+interval = 5
+
+; mpd settings
+;label-song = %artist% - "%title%" from %album%
+;label-song-maxlen = 115
+;label-song-ellipsis = true
 
 ;icon-play = 
 ;icon-pause = 
 
-format-online = <toggle> <label-song>
+;format-online = <toggle> <label-song>
 
-[module/volume]
-type = internal/volume
+[module/alsa]
+type = internal/alsa
+
+label-volume = %percentage%%
+label-muted = MUTE
+
+format-volume = <label-volume>
+
+[module/pulseaudio]
+type = internal/pulseaudio
 
 label-volume = %percentage%%
 label-muted = MUTE

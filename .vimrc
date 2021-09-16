@@ -12,6 +12,8 @@ Plug 'jamessan/vim-gnupg'
 " language server
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+" flake8
+Plug 'nvie/vim-flake8'
 
 call plug#end()
 

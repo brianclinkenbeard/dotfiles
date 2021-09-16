@@ -16,11 +16,12 @@ super + Escape
 
 # raise/lower volume
 super + {minus,equal}
-	amixer sset Master {1-,1+} unmute
+	pactl set-sink-volume @DEFAULT_SINK@ {-1000,+1000}
+#	amixer sset Master {1-,1+} unmute
 
 # mpc controls
 XF86Audio{Play,Stop,Prev,Next}
-	mpc {toggle,stop,prev,next}
+	$HOME/.bin/player.sh {toggle,stop,prev,next}
 
 # calculator
 XF86Calculator

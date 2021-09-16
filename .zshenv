@@ -19,3 +19,5 @@ export TEXMFHOME="$HOME/.texmf"
 
 # hidden gopath
 export GOPATH="$HOME/.go"
+
+export GPG_TTY="$TTY"

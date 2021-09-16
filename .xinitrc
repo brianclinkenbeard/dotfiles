@@ -15,22 +15,33 @@ redshift > /dev/null &
 urxvtd -q -f -o &
 
 # autolock
-xautolock -time 10 -locker 'physlock -s -m' &
+#xautolock -time 10 -locker 'physlock -s -m' &
+
+# for xidlehook
+export PRIMARY_DISPLAY="$(xrandr | awk '/ connected/{print $1;exit;}')"
+
+# run xidlehook
+xidlehook \
+  --not-when-fullscreen \
+  --not-when-audio \
+  --timer 300 \
+    'xrandr --output "$PRIMARY_DISPLAY" --brightness .5' \
+    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
+  --timer 5 \
+    'physlock -s -m & xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
+    '' &
 
 # syncthing
-[ -z $(pgrep -xU $UID syncthing) ]] && syncthing -no-restart &
+[ -z $(pgrep -xU $UID syncthing) ] && syncthing -no-restart -no-browser &
 
 # run rtorrent if media disk is mounted
 mountpoint -q /mnt/media && rtorrent &
 
-# daemonize rtorrent-flood
-forever start --uid flood -a --sourceDir "$HOME/documents/projects/flood" "server/bin/start.js"
+# flood
+flood > /dev/null &
 
 # hydroxide smtp server
 $HOME/.go/bin/hydroxide smtp &
-
-# ping default gateway to keep powerline adapter working
-ping 192.168.1.254 -q > /dev/null &
 
 # start bspwm
 exec bspwm

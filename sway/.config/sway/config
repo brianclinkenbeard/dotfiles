@@ -235,3 +235,6 @@ include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "
 
 # custom
 default_border none
+
+set $lock swaylock
+bindsym Ctrl+Shift+l exec $lock

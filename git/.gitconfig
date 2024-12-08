@@ -1,0 +1,7 @@
+[user]
+	name = Brian Clinkenbeard
+	email = brianclinkenbeard@users.noreply.github.com
+[commit]
+	gpgsign = true
+[credential]
+	helper = store

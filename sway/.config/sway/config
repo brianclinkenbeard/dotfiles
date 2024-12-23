@@ -43,14 +43,11 @@ output DP-1 mode 2560x1440@120Hz
 output DP-1 adaptive_sync on
 
 ### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+exec swayidle -w \
+         timeout 300 'swaylock -f' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f'
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -71,6 +68,10 @@ output DP-1 adaptive_sync on
 input "1189:32774:BenQ_ZOWIE_BenQ_ZOWIE_Gaming_Mouse" {
     accel_profile "flat"
 }
+input "1133:45111:MX_Anywhere_3S_Mouse" {
+    accel_profile "flat"
+}
+
 
 ### Key bindings
 #
@@ -237,4 +238,6 @@ include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "
 default_border none
 
 set $lock swaylock
-bindsym Ctrl+Shift+l exec $lock
+bindsym $mod+Ctrl+l exec $lock
+
+for_window [app_id="firefox"] inhibit_idle fullscreen

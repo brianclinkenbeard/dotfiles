@@ -1,2 +1,5 @@
 cmd trash %trashy put -- $fx
 map D trash
+
+set previewer pistol
+set sixel true

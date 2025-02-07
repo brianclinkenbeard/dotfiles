@@ -3,5 +3,5 @@ set ifs "\n"
 cmd trash %trashy put -- $fx
 map D trash
 
-set previewer pistol
+set previewer ~/.config/lf/previewer
 set cleaner ~/.config/lf/cleaner

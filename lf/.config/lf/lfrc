@@ -3,5 +3,8 @@ set ifs "\n"
 cmd trash %trashy put -- $fx
 map D trash
 
+cmd mkdir %mkdir "$@"
+map a push :mkdir<space>
+
 set previewer ~/.config/lf/previewer
 set cleaner ~/.config/lf/cleaner

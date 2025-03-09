@@ -237,4 +237,5 @@ set $lock swaylock
 bindsym $mod+Ctrl+l exec $lock
 
 for_window [app_id="firefox"] inhibit_idle fullscreen
+for_window [class="steam_app*"] inhibit_idle focus
 for_window [shell="xwayland"] title_format "[XWayland] %title"

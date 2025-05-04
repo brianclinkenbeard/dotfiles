@@ -39,8 +39,9 @@ output * bg /home/brian/.local/share/backgrounds/today.jpg fill
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output DP-1 mode 2560x1440@120Hz
-output DP-1 adaptive_sync on
+#output DP-1 mode 2560x1440@120Hz
+#output DP-1 adaptive_sync on
+output HDMI-A-3 mode 1920x1080@60Hz
 
 ### Idle configuration
 exec swayidle -w \
@@ -231,7 +232,7 @@ bindsym $mod+r mode "resize"
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
 # custom
-default_border none
+default_border pixel
 
 set $lock swaylock
 bindsym $mod+Ctrl+l exec $lock
@@ -239,3 +240,7 @@ bindsym $mod+Ctrl+l exec $lock
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [class="steam_app*"] inhibit_idle focus
 for_window [shell="xwayland"] title_format "[XWayland] %title"
+
+gaps inner 10
+smart_gaps on
+smart_borders on

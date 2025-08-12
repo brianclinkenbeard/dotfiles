@@ -1,5 +1,5 @@
 alias vim='nvim'
-alias trash='trashy'
+alias trash='gio trash'
 
 alias rdc='docker compose down && docker compose up -d'
 alias rpc='podman-compose down && podman-compose up -d'

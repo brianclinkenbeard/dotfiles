@@ -1,6 +1,6 @@
 set ifs "\n"
 
-cmd trash %trashy put -- $fx
+cmd trash %gio trash -- $fx
 map D trash
 
 cmd mkdir %mkdir "$@"

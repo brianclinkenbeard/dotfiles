@@ -9,6 +9,7 @@ alias localip="hostname -I | cut -d' ' -f1"
 alias ports='sudo ss -tuln'
 checkport() { sudo fuser -v "$1/tcp" "$1/udp"; }
 alias perm='stat -c "%a"'
+alias dl='curl -LO'
 
 alias sc='systemctl'
 _completion_loader systemctl

@@ -1,0 +1,9 @@
+[Unit]
+Description=go-librespot
+After=network.target sound.target
+
+[Service]
+ExecStart=%h/.local/share/mise/shims/go-librespot
+
+[Install]
+WantedBy=default.target

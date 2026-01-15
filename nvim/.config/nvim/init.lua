@@ -36,3 +36,6 @@ api.nvim_create_autocmd("InsertLeave", {
   callback = function() o.listchars:append({ trail = '-' }) end
 })
 
+-- PLUGINS --
+vim.pack.add({ 'https://github.com/rebelot/kanagawa.nvim' })
+vim.cmd("colorscheme kanagawa")

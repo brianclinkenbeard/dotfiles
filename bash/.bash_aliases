@@ -14,6 +14,9 @@ alias dl='curl -LO'
 alias sc='systemctl'
 _completion_loader systemctl
 complete -F _systemctl sc
+alias jc='journalctl'
+_completion_loader journalctl
+complete -F _journalctl jc
 
 # Respect aliases with sudo
 alias sudo='sudo '

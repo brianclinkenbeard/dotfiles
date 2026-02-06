@@ -6,4 +6,4 @@ case "$(file -Lb --mime-type -- "$1")" in
     ;;
 esac
 
-pistol "$1"
+pistol-static "$1"

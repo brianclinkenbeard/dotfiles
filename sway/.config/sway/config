@@ -253,7 +253,7 @@ bindsym $mod+Ctrl+l exec $lock
 for_window [app_id="firefox"] inhibit_idle fullscreen
 for_window [class="steam_app*"] inhibit_idle focus
 for_window [shell="xwayland"] title_format "[XWayland] %title"
-for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable, resize set width 25 ppt height 25 ppt, move position 74 ppt 74 ppt
+for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable, sticky enable, resize set width 25 ppt height 25 ppt, move position 74 ppt 74 ppt
 
 gaps inner 10
 smart_gaps on

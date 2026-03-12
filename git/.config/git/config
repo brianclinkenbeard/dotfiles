@@ -1,0 +1,13 @@
+[user]
+	email = brianclinkenbeard@users.noreply.github.com
+	name = Brian Clinkenbeard
+	signingkey = E9B9689BB4DA0D6C
+[commit]
+	gpgsign = true
+[credential]
+	helper = store
+[core]
+	excludesfile = /home/brian/.config/git/gitignore
+[rebase]
+	autoStash = true
+	autoSquash = true
